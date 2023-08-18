@@ -17,4 +17,13 @@ public class Article {
     private String anons;
     private String fullText;
     private int views;
+
+    public Article() {
+    }
+
+    public Article(String title, String anons, String fullText) {
+        this.title = title;
+        this.anons = anons;
+        this.fullText = fullText;
+    }
 }

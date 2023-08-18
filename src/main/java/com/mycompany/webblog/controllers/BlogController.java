@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BlogController {
@@ -22,5 +24,17 @@ public class BlogController {
     @GetMapping("/blog/add")
     public String blogAdd(Model model){
         return "blog-add";
+    }
+
+    @PostMapping(value = "/blog/add")
+    public String BlogArticleAdd(
+            @RequestParam String title,
+            @RequestParam String anons,
+            @RequestParam String full_text,
+            Model model
+    ){
+        Article article = new Article(title, anons, full_text);
+        articleRepository.save(article);
+        return "redirect:/blog";
     }
 }
