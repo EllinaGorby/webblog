@@ -8,11 +8,11 @@
 <body>
 <header th:insert="~{blocks/header :: header}"></header>
 <div class="container mt-5">
-    <h1> News </h1>
+    <h1> Articles </h1>
     <div th:each="el : ${articles}" class="alert alert-info mt-2">
         <h3 th:text = "${el.title}"></h3>
         <p th:text = "${el.anons}"></p>
-        <a th:href = "'/blog/' + ${el.id}">more</a>
+        <a th:href = "'/blog/' + ${el.id}" class="btn btn-warning">more</a>
 
     </div>
 </div>

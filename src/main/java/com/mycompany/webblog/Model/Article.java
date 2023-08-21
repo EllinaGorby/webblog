@@ -15,15 +15,15 @@ public class Article {
     private Long id;
     private String title;
     private String anons;
-    private String fullText;
+    private String full_text;
     private int views;
 
     public Article() {
     }
 
-    public Article(String title, String anons, String fullText) {
+    public Article(String title, String anons, String full_text) {
         this.title = title;
         this.anons = anons;
-        this.fullText = fullText;
+        this.full_text = full_text;
     }
 }
