@@ -26,4 +26,8 @@ public class Article {
         this.anons = anons;
         this.full_text = full_text;
     }
+
+    public void incrementOfViews(){
+        this.views++;
+    }
 }
