@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import java.util.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
 @Controller
 public class BlogController {
+
+    private static final Logger logger = Logger.getLogger(BlogController.class.getName());
 
     @Autowired
     private ArticleRepository articleRepository;
@@ -31,7 +34,7 @@ public class BlogController {
     }
 
     @PostMapping(value = "/blog/add")
-    public String BlogArticleAdd(
+    public String blogArticleAdd(
             @RequestParam String title,
             @RequestParam String anons,
             @RequestParam String full_text,
@@ -52,5 +55,36 @@ public class BlogController {
         article.ifPresent(res::add);
         model.addAttribute("article", res);
         return "article-details";
+    }
+
+    @GetMapping("/blog/{id}/edit")
+    public String articleEdit(@PathVariable(value = "id") long id, Model model){
+        logger.info("Received request for /blog/" + id + "/edit");
+        if(!articleRepository.existsById(id)){
+            return "redirect:/blog";
+        }
+        Optional<Article> article = articleRepository.findById(id);
+        ArrayList<Article> res = new ArrayList<>();
+        article.ifPresent(res::add);
+        model.addAttribute("article", res);
+        return "article-edit";
+    }
+
+    @PostMapping(value = "/blog/{id}/edit")
+    public String blogArticleEdit(
+            @PathVariable(value = "id") long id,
+            @RequestParam String title,
+            @RequestParam String anons,
+            @RequestParam String full_text,
+            Model model
+    ){
+        Article article = articleRepository.findById(id).orElseThrow();
+        articleRepository.save(article);
+        article.setTitle(title);
+        article.setAnons(anons);
+        article.setFull_text(full_text);
+        articleRepository.save(article);
+
+        return "redirect:/blog";
     }
 }
