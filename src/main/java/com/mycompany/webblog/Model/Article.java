@@ -1,9 +1,6 @@
 package com.mycompany.webblog.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 
@@ -15,6 +12,7 @@ public class Article {
     private Long id;
     private String title;
     private String anons;
+    @Column(columnDefinition = "TEXT")
     private String full_text;
     private int views;
 
