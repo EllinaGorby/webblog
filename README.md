@@ -1,6 +1,7 @@
 # webblog
 
 ## 1. Einführung (Einleitung):
+
 Ein kleines, einfaches Bildungsprojekt - ein Webblog, in dem Artikel hinzugefügt, bearbeitet und gelöscht werden können. Implementiert in Java mit dem Spring Boot-Framework.
 ---
 
@@ -9,7 +10,7 @@ Ein kleines, einfaches Bildungsprojekt - ein Webblog, in dem Artikel hinzugefüg
 Datenmodell:
 Das Datenmodell besteht aus einer Klasse namens "Article", die die Struktur und Eigenschaften der Artikel im Blog repräsentiert. Hier ist der Code dafür:
 
-\```
+```java
 package com.mycompany.webblog.Model;
 
 import jakarta.persistence.*;
@@ -29,11 +30,11 @@ public class Article {
 
     // Konstruktoren und Methoden hier...
 }
-\```
+```
 Datenrepository:
 Das Datenrepository ist ein Interface namens "ArticleRepository", das von "CrudRepository" erbt und den Zugriff auf die Artikeldaten ermöglicht. Hier ist der Code dafür:
 
-\```
+```java
 package com.mycompany.webblog.repository;
 
 import com.mycompany.webblog.Model.Article;
@@ -41,7 +42,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ArticleRepository extends CrudRepository<Article, Long> {
 }
-\```
+```
 ---
 ## 3. Controller (Steuerung):
 
