@@ -45,7 +45,29 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
 }
 ```
 ---
-## 3. Controller (Steuerung):
+## 3. Datenbankverbindung (Datenbankverwaltung):
+
+Die Anwendung verwendet eine MySQL-Datenbank zur Speicherung von Blog-Artikeln und anderen Daten. Die Konfigurationsparameter für die Datenbankverbindung sind in der Datei "application.properties" definiert. Hier sind die relevanten Konfigurationen:
+```
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_webblog
+spring.datasource.username=root
+spring.datasource.password=
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.show-sql: true
+#logging.level.root = DEBUG
+```
+
+- **spring.jpa.hibernate.ddl-auto**: Diese Einstellung legt fest, wie Hibernate (ein ORM-Framework) mit der Datenbankstruktur umgeht. Im aktuellen Fall ist "update" ausgewählt, was bedeutet, dass Hibernate die Datenbank automatisch aktualisiert, wenn sich das Datenmodell ändert. Dies ist nützlich während der Entwicklung.
+
+- **spring.datasource.url**: Hier wird die JDBC-URL für die Verbindung zur MySQL-Datenbank angegeben. Standardmäßig ist der Host auf "localhost" und der Port auf "3306" eingestellt, und die Datenbank mit dem Namen "db_webblog" wird verwendet.
+
+- **spring.datasource.username und spring.datasource.password**: Dies sind die Anmeldeinformationen für die Datenbank. Im Beispiel sind sie auf den MySQL-Benutzer "root" und ein leeres Passwort eingestellt. Bitte ändern Sie diese Werte entsprechend Ihrer Datenbankkonfiguration.
+
+- **spring.datasource.driver-class-name**: Dies ist der Name des JDBC-Treibers für MySQL.
+
+---
+## 4. Controller (Steuerung):
 
 Hier sind die Controller für die Steuerung des Webblogs:
 
@@ -54,13 +76,13 @@ Hier sind die Controller für die Steuerung des Webblogs:
 **"MainController"** behandelt die Hauptseite und die "Über uns"-Seite.
 
 ---
-# 4. Verwendete Bibliotheken und Frameworks:
+## 5. Verwendete Bibliotheken und Frameworks:
 
 Hier sind die Bibliotheken und Frameworks aufgeführt, die im Projekt verwendet wurden. Zu den Hauptkomponenten gehören Spring Boot, Thymeleaf und Bootstrap.
 
 ---
 
-## 5. Benutzeroberfläche (Nutzerinterface):
+## 6. Benutzeroberfläche (Nutzerinterface):
 
 `http://localhost:8080/`
 
