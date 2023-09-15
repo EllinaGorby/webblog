@@ -15,6 +15,10 @@ sehen wir Startseite:
 
 ![blog](https://github.com/EllinaGorby/webblog/blob/master/screenshots/articles.jpg)
 
+![articles_button_more](https://github.com/EllinaGorby/webblog/blob/master/screenshots/articles_button_more.jpg)
+
+![review_article](https://github.com/EllinaGorby/webblog/blob/master/screenshots/review_article.jpg)
+
 Jeder Artikel kann 
 - **bearbeitet**
 - **gelöscht**
