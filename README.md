@@ -3,6 +3,7 @@
 ## 1. Einführung (Einleitung):
 
 Ein kleines, einfaches Bildungsprojekt - ein Webblog, in dem Artikel hinzugefügt, bearbeitet und gelöscht werden können. Implementiert in Java mit dem Spring Boot-Framework.
+
 ---
 
 ## 2. Datenmodell und Datenrepository (Datenbank):
@@ -48,21 +49,22 @@ public interface ArticleRepository extends CrudRepository<Article, Long> {
 
 Hier sind die Controller für die Steuerung des Webblogs:
 
-"BlogController" verwaltet die Anzeige und Verwaltung der Blog-Artikel.
-"MainController" behandelt die Hauptseite und die "Über uns"-Seite.
+**"BlogController"** verwaltet die Anzeige und Verwaltung der Blog-Artikel.
+
+**"MainController"** behandelt die Hauptseite und die "Über uns"-Seite.
 
 ---
-# 5. Verwendete Bibliotheken und Frameworks:
+# 4. Verwendete Bibliotheken und Frameworks:
 
 Hier sind die Bibliotheken und Frameworks aufgeführt, die im Projekt verwendet wurden. Zu den Hauptkomponenten gehören Spring Boot, Thymeleaf und Bootstrap.
+
 ---
 
 ## 5. Benutzeroberfläche (Nutzerinterface):
-Beim 
 
 `http://localhost:8080/`
 
-sehen wir Startseite:
+Startseite:
 
 ![homepage](https://github.com/EllinaGorby/webblog/blob/master/screenshots/homepage.jpg)
 
