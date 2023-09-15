@@ -15,8 +15,15 @@ sehen wir Startseite:
 
 ![blog](https://github.com/EllinaGorby/webblog/blob/master/screenshots/articles.jpg)
 
+Jeder Artikel kann 
+- **bearbeitet**
+- **gelöscht**
+werden und Sie können sehen, wie viele Aufrufe der Artikel hatte.
+- **view**
 
 ![blog](https://github.com/EllinaGorby/webblog/blob/master/screenshots/review_article_buttons.jpg)
+
+Nach dem Taste **edit**:
 
 ![edit_article](https://github.com/EllinaGorby/webblog/blob/master/screenshots/edit_article.jpg)
 
@@ -29,5 +36,5 @@ sehen wir Startseite:
 
 ![add_articles](https://github.com/EllinaGorby/webblog/blob/master/screenshots/add_articles.jpg)
 
-![link_add_article](https://github.com/EllinaGorby/webblog/blob/master/screenshots/link_add_article.jpg)
+
 
